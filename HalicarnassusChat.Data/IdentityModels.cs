@@ -37,10 +37,10 @@ namespace HalicarnassusChat.Data
             {
                 HasKey(iur => iur.UserId);
             }
-        }
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
+            public static ApplicationDbContext Create()
+            {
+                return new ApplicationDbContext();
+            }
         }
     }
 }

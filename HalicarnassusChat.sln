@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalicarnassusChat.WebAPI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalicarnassusChat.Data", "HalicarnassusChat.Data\HalicarnassusChat.Data.csproj", "{E49F8B19-F9DD-4BA2-9277-6A89AE73F430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalicarnassusChat.Models", "HalicarnassusChat.Models\HalicarnassusChat.Models.csproj", "{CF4B52D9-A2FD-4678-94BA-0C16F0788819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalicarnassusChat.Services", "HalicarnassusChat.Services\HalicarnassusChat.Services.csproj", "{5C3CCE1F-22AE-4812-8F79-DF6E8486F8D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{E49F8B19-F9DD-4BA2-9277-6A89AE73F430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E49F8B19-F9DD-4BA2-9277-6A89AE73F430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E49F8B19-F9DD-4BA2-9277-6A89AE73F430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4B52D9-A2FD-4678-94BA-0C16F0788819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4B52D9-A2FD-4678-94BA-0C16F0788819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4B52D9-A2FD-4678-94BA-0C16F0788819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4B52D9-A2FD-4678-94BA-0C16F0788819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3CCE1F-22AE-4812-8F79-DF6E8486F8D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3CCE1F-22AE-4812-8F79-DF6E8486F8D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3CCE1F-22AE-4812-8F79-DF6E8486F8D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3CCE1F-22AE-4812-8F79-DF6E8486F8D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
