@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using HalicarnassusChat.WebAPI.Models;
 using HalicarnassusChat.WebAPI.Providers;
 using HalicarnassusChat.WebAPI.Results;
+using HalicarnassusChat.Data;
 
 namespace HalicarnassusChat.WebAPI.Controllers
 {
