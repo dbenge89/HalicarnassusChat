@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using HalicarnassusChat.WebAPI.Providers;
 using HalicarnassusChat.WebAPI.Models;
+using HalicarnassusChat.Data;
 
 namespace HalicarnassusChat.WebAPI
 {

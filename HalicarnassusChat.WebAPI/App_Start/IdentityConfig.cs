@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using HalicarnassusChat.WebAPI.Models;
+using HalicarnassusChat.Data;
 
 namespace HalicarnassusChat.WebAPI
 {
