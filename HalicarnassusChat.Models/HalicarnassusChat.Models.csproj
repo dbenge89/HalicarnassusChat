@@ -62,12 +62,15 @@
   <ItemGroup>
     <Compile Include="CommentList.cs" />
     <Compile Include="CreateComment.cs" />
-=======
     <Compile Include="CreatePost.cs" />
     <Compile Include="PostDetail.cs" />
     <Compile Include="PostEdit.cs" />
     <Compile Include="PostList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyCreate.cs" />
+    <Compile Include="ReplyDetail.cs" />
+    <Compile Include="ReplyEdit.cs" />
+    <Compile Include="ReplyListItem.cs" />
     <Compile Include="RequiredAttribute.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace HalicarnassusChat.Data
 {
-    public class Reply : Comment
+    public class Reply
     {
+        [Key]
+        int ReplyId { get; set; }
+        [Required]
+        string Text { get; set; }
+        [Required]
+        Guid Author { get; set; }
         [Required]
         public int Id { get; set; }
         [ForeignKey(nameof(CommentId))]

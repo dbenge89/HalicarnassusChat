@@ -26,6 +26,12 @@ namespace HalicarnassusChat.Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+        public DbSet<Reply> Replies { get; set; }
+        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
 
         public static ApplicationDbContext Create()
         {
