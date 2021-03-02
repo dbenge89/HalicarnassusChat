@@ -51,17 +51,21 @@ namespace HalicarnassusChat.Services
             }
         }
 
-        public ReplyDetail GetReplyByCommentId(int commentId)
+        public IEnumerable<ReplyDetail> GetReplyByCommentId(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Replies
-                        .Single(e => e.CommentId == commentId && e.Author == _userId);
-                return
+                    .Where(e => e.CommentId == id && e.Author == _userId)
+                    .Select(
+                    e =>
                     new ReplyDetail
                     {
-                        Content = entity.Content
-                    };
+                        Content = e.Content
+                    }
+                    );
+
+                return entity.ToArray();
             }
         }
 

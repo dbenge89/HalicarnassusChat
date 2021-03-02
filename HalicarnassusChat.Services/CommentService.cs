@@ -63,6 +63,24 @@ namespace HalicarnassusChat.Services
             }
         }
 
+        public IEnumerable<CommentDetail> GetCommentByPostId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Comments
+                    .Where(e => e.PostId == id && e.Author == _userId)
+                    .Select(
+                    e =>
+                    new CommentDetail
+                    {
+                        Content = e.Content
+                    }
+                    );
+
+                return entity.ToArray();
+            }
+        }
+
         public bool UpdateComment(CommentEdit model)
         {
             using (var ctx = new ApplicationDbContext())
