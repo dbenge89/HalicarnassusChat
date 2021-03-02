@@ -60,7 +60,6 @@ namespace HalicarnassusChat.Services
 
                 return query.ToArray();
 
-
             }
         }
 
