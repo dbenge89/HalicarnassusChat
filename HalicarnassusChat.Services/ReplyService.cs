@@ -10,11 +10,11 @@ namespace HalicarnassusChat.Services
 {
     public class ReplyService
     {
-        private readonly Guid _author;
+        private readonly Guid _userId;
 
-        public ReplyService(Guid author)
+        public ReplyService(Guid userId)
         {
-            _author = author;
+            _userId = userId;
         }
         public bool CreateReply(ReplyCreate model)
         {
@@ -37,7 +37,7 @@ namespace HalicarnassusChat.Services
                 var query =
                     ctx
                         .Replies
-                        .Where(e => e.Author == _author)
+                        .Where(e => e.CommentId == _userId)
                         .Select(
                             e =>
                                 new ReplyListItem
@@ -50,22 +50,7 @@ namespace HalicarnassusChat.Services
                 return query.ToArray();
             }
         }
-        public ReplyDetail GetReplyByCommentId(int commentId)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .Replies
-                        .Single(e => e.CommentId == commentId && e.Author == _author);
-                return
-                    new ReplyDetail
-                    {
-                        ReplyId = e.ReplyId,
-                        Text = e.Text
-                    };
-            }
-        }
+        
         public bool UpdateReply(ReplyEdit model)
         {
             using (var ctx = new ApplicationDbContext())

@@ -21,6 +21,6 @@ namespace HalicarnassusChat.Data
         public virtual List<Comment> Comments { get; set; }
 
         [Required]
-        Guid Aurthor { get; set; }
+        Guid Author { get; set; }
     }
 }

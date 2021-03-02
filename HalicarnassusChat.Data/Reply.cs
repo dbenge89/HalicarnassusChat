@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HalicarnassusChat.Data
 {
-    public class Reply : Comment
+    public class Reply
     {
         [Key]
         int ReplyId { get; set; }
