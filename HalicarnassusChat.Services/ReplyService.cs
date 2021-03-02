@@ -16,16 +16,23 @@ namespace HalicarnassusChat.Services
         {
             _userId = userId;
         }
+
         public bool CreateReply(ReplyCreate model)
         {
-            var entity =
-                new Reply()
-                {
-                    Content = model.Content
-                };
-
             using (var ctx = new ApplicationDbContext())
             {
+                bool isValid = int.TryParse(model.CommentId, out int id);
+                if (!isValid)
+                {
+                    id = 0;
+                }
+                var entity =
+                new Reply()
+                {
+                    Author = _userId,
+                    Content = model.Content,
+                    CommentId = id,
+                };
                 ctx.Replies.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
