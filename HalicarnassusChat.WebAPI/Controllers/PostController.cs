@@ -26,7 +26,7 @@ namespace HalicarnassusChat.WebAPI.Controllers
             return Ok(posts);
         }
 
-        public IHttpActionResult Post(CreatePost post)
+        public IHttpActionResult Post(PostCreate post)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -58,6 +58,7 @@ namespace HalicarnassusChat.WebAPI.Controllers
 
             return Ok();
         }
+
         public IHttpActionResult Delete(int id)
         {
             var service = CreatePostService();

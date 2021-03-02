@@ -64,5 +64,30 @@ namespace HalicarnassusChat.Services
             }
         }
 
+        public bool UpdateComment(CommentEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Comments
+                        .Single(e => e.CommentId == model.CommentId && e.Author == _userId);
+
+                entity.Content = model.Content;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteComment(int commentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Comments
+                        .Single(e => e.PostId == commentId && e.Author == _userId);
+
+                ctx.Comments.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
