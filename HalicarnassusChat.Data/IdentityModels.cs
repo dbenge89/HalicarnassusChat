@@ -32,6 +32,14 @@ namespace HalicarnassusChat.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<Comment> Comments { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+
         public DbSet<Post> Posts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -59,5 +67,7 @@ namespace HalicarnassusChat.Data
         {
             HasKey(iur => iur.UserId);
         }
+
+
     }
 }

@@ -11,6 +11,14 @@ namespace HalicarnassusChat.Data
     public class Comment
     {
         [Key]
+        public int CommentId { get; set; }
+
+        [Required]
+        public string Content { get; set; }
+
+        [Required]
+        public Guid Author { get; set; }
+
         public int Id { get; set; }
 
         [Required]
@@ -23,6 +31,7 @@ namespace HalicarnassusChat.Data
 
         [Required]
         public int PostId { get; set; }
+
         [ForeignKey(nameof(PostId))]
         public virtual Post Post { get; set; }
 
