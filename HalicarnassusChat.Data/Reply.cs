@@ -10,6 +10,12 @@ namespace HalicarnassusChat.Data
 {
     public class Reply : Comment
     {
+        [Key]
+        int ReplyId { get; set; }
+        [Required]
+        string Text { get; set; }
+        [Required]
+        Guid Author { get; set; }
         [Required]
         public int CommentId { get; set; }
         [ForeignKey(nameof(CommentId))]

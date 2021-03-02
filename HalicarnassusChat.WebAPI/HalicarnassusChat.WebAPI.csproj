@@ -404,6 +404,14 @@
       <Project>{e49f8b19-f9dd-4ba2-9277-6a89ae73f430}</Project>
       <Name>HalicarnassusChat.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HalicarnassusChat.Models\HalicarnassusChat.Models.csproj">
+      <Project>{cf4b52d9-a2fd-4678-94ba-0c16f0788819}</Project>
+      <Name>HalicarnassusChat.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HalicarnassusChat.Services\HalicarnassusChat.Services.csproj">
+      <Project>{5c3cce1f-22ae-4812-8f79-df6e8486f8d2}</Project>
+      <Name>HalicarnassusChat.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

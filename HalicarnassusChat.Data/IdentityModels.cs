@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -24,6 +25,11 @@ namespace HalicarnassusChat.Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+        public DbSet<Reply> Replies { get; set; }
         public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
         {
             public IdentityUserLoginConfiguration()
