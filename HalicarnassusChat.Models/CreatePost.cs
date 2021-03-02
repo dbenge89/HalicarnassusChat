@@ -5,22 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HalicarnassusChat.Data
+namespace HalicarnassusChat.Models
 {
-    public class Post
+    public class CreatePost
     {
-        [Key]
-        public int PostId { get; set; }
-
         [Required]
-        public Guid Author { get; set; }
-
-        [Required]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
+        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string Title { get; set; }
 
         [Required]
+        [MaxLength(5000)]
         public string Text { get; set; }
-
-        public virtual List<Comment> Comments { get; set; }
     }
 }
