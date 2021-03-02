@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -31,22 +32,48 @@ namespace HalicarnassusChat.Data
         }
         public DbSet<Reply> Replies { get; set; }
         public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+
+        public static ApplicationDbContext Create()
         {
-            public IdentityUserLoginConfiguration()
-            {
-                HasKey(iul => iul.UserId);
-            }
+            return new ApplicationDbContext();
         }
-        public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+
+        public DbSet<Comment> Comments { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            public IdentityUserRoleConfiguration()
-            {
-                HasKey(iur => iur.UserId);
-            }
-            public static ApplicationDbContext Create()
-            {
-                return new ApplicationDbContext();
-            }
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+
+        public DbSet<Post> Posts { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+            .Conventions
+            .Remove<PluralizingTableNameConvention>();
+
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
         }
+    }
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(iul => iul.UserId);
+        }
+    }
+
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+    {
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.UserId);
+        }
+
+
     }
 }

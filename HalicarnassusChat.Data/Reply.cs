@@ -17,7 +17,7 @@ namespace HalicarnassusChat.Data
         [Required]
         Guid Author { get; set; }
         [Required]
-        public int CommentId { get; set; }
+        public int Id { get; set; }
         [ForeignKey(nameof(CommentId))]
         public virtual Comment Comment { get; set; }
     }
