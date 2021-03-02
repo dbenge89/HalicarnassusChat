@@ -21,7 +21,7 @@ namespace HalicarnassusChat.WebAPI.Controllers
 
         public IHttpActionResult Get()
         {
-            PostService commentService = CreateCommentService();
+            CommentService commentService = CreateCommentService();
             var comments = commentService.GetComments();
             return Ok(comments);
         }
@@ -60,9 +60,9 @@ namespace HalicarnassusChat.WebAPI.Controllers
         }
         public IHttpActionResult Delete(int id)
         {
-            var service = CreatePostService();
+            var service = CreateCommentService();
 
-            if (!service.DeletePost(id))
+            if (!service.DeleteComment(id))
                 return InternalServerError();
 
             return Ok();
