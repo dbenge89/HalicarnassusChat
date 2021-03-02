@@ -19,7 +19,7 @@ namespace HalicarnassusChat.Data
         public string Title { get; set; }
 
         [Required]
-        public string Text { get; set; }
+        public string Content { get; set; }
 
         public virtual List<Comment> Comments { get; set; }
     }

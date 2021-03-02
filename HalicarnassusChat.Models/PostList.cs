@@ -8,7 +8,7 @@ namespace HalicarnassusChat.Models
 {
     public class PostList
     {
-        public int Id { get; set; }
+        public int PostId { get; set; }
         public string Title { get; set; }
     }
 }

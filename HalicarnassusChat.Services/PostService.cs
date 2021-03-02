@@ -23,7 +23,7 @@ namespace HalicarnassusChat.Services
             {
                 Author = _userId,
                 Title = model.Title,
-                Text = model.Text
+                Content = model.Content
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -42,7 +42,7 @@ namespace HalicarnassusChat.Services
                         .Select(
                             e => new PostList
                             {
-                                Id = e.PostId,
+                                PostId = e.PostId,
                                 Title = e.Title,
                             });
 
@@ -61,7 +61,7 @@ namespace HalicarnassusChat.Services
                     {
                         PostId = entity.PostId,
                         Title = entity.Title,
-                        Text = entity.Text
+                        Content = entity.Content
                     };
             }
         }
@@ -74,7 +74,7 @@ namespace HalicarnassusChat.Services
                         .Single(e => e.PostId == model.PostId && e.Author == _userId);
 
                 entity.Title = model.Title;
-                entity.Text = model.Text;
+                entity.Content = model.Content;
 
                 return ctx.SaveChanges() == 1;
             }
