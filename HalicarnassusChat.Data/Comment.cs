@@ -19,6 +19,14 @@ namespace HalicarnassusChat.Data
         [Required]
         public Guid Author { get; set; }
 
+        public int Id { get; set; }
+
+        [Required]
+        public Guid Author { get; set; }
+
+        [Required]
+        public string Text { get; set; }
+
         public virtual List<Reply> Replies { get; set; }
 
         [Required]

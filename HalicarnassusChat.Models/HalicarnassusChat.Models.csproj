@@ -62,7 +62,19 @@
   <ItemGroup>
     <Compile Include="CommentList.cs" />
     <Compile Include="CreateComment.cs" />
+=======
+    <Compile Include="CreatePost.cs" />
+    <Compile Include="PostDetail.cs" />
+    <Compile Include="PostEdit.cs" />
+    <Compile Include="PostList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequiredAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HalicarnassusChat.Data\HalicarnassusChat.Data.csproj">
+      <Project>{e49f8b19-f9dd-4ba2-9277-6a89ae73f430}</Project>
+      <Name>HalicarnassusChat.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
