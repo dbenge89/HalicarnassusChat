@@ -21,7 +21,7 @@ namespace HalicarnassusChat.Services
             var entity =
                 new Reply()
                 {
-                    Replies = model.Text
+                    Content = model.Content
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -37,20 +37,34 @@ namespace HalicarnassusChat.Services
                 var query =
                     ctx
                         .Replies
-                        .Where(e => e.CommentId == _userId)
+                        .Where(e => e.Author == _userId)
                         .Select(
                             e =>
                                 new ReplyListItem
                                 {
                                     ReplyId = e.ReplyId,
-                                    Text = e.Text
+                                    Content = e.Content
                                 }
                         );
 
                 return query.ToArray();
             }
         }
-        
+
+        public ReplyDetail GetReplyByCommentId(int commentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Replies
+                        .Single(e => e.CommentId == commentId && e.Author == _userId);
+                return
+                    new ReplyDetail
+                    {
+                        Content = entity.Content
+                    };
+            }
+        }
+
         public bool UpdateReply(ReplyEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -58,10 +72,10 @@ namespace HalicarnassusChat.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(e => e.ReplyId == model.ReplyId && e.Author == _author);
+                        .Single(e => e.ReplyId == model.ReplyId && e.Author == _userId);
 
                 entity.ReplyId = model.ReplyId;
-                entity.Text = model.Text;
+                entity.Content = model.Content;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -73,7 +87,7 @@ namespace HalicarnassusChat.Services
                 var entity =
                     ctx
                         .Replies
-                        .Single(e => e.ReplyId == replyId && e.Author == _author);
+                        .Single(e => e.ReplyId == replyId && e.Author == _userId);
 
                 ctx.Replies.Remove(entity);
 

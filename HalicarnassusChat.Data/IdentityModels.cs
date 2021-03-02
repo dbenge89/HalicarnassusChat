@@ -26,27 +26,18 @@ namespace HalicarnassusChat.Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-        public DbSet<Reply> Replies { get; set; }
-        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Reply> Replies { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Conventions
-                .Remove<PluralizingTableNameConvention>();
-
         public DbSet<Post> Posts { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -59,6 +50,7 @@ namespace HalicarnassusChat.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
     }
+
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
         public IdentityUserLoginConfiguration()

@@ -11,13 +11,17 @@ namespace HalicarnassusChat.Data
     public class Reply
     {
         [Key]
-        int ReplyId { get; set; }
+        public int ReplyId { get; set; }
+
         [Required]
-        string Text { get; set; }
+        public string Content { get; set; }
+
         [Required]
-        Guid Author { get; set; }
+        public Guid Author { get; set; }
+
         [Required]
-        public int Id { get; set; }
+        public int CommentId { get; set; }
+
         [ForeignKey(nameof(CommentId))]
         public virtual Comment Comment { get; set; }
     }

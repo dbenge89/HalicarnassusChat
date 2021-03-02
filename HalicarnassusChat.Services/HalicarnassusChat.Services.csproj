@@ -148,10 +148,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HalicarnassusChat.Data\HalicarnassusChat.Data.csproj">
       <Project>{e49f8b19-f9dd-4ba2-9277-6a89ae73f430}</Project>
       <Name>HalicarnassusChat.Data</Name>
@@ -163,8 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

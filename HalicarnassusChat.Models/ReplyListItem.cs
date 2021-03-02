@@ -9,6 +9,6 @@ namespace HalicarnassusChat.Models
     public class ReplyListItem
     {
         public int ReplyId { get; set; }
-        public string Text { get; set; }
+        public string Content { get; set; }
     }
 }
