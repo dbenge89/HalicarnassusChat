@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HalicarnassusChat.Models
 {
-    public class CreatePost
+    public class PostCreate
     {
         [Required]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]

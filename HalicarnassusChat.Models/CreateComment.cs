@@ -13,6 +13,7 @@ namespace HalicarnassusChat.Models
         [Required]
         [MaxLength(280, ErrorMessage = "There are too many characters in this field.")]
         public string Content { get; set; }
+
         [Required]
         public string PostId { get; set; }
 

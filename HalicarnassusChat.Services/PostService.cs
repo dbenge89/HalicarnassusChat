@@ -17,7 +17,7 @@ namespace HalicarnassusChat.Services
             _userId = userId;
         }
 
-        public bool CreatePost(CreatePost model)
+        public bool CreatePost(PostCreate model)
         {
             var entity = new Post()
             {
@@ -79,6 +79,7 @@ namespace HalicarnassusChat.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public bool DeletePost(int postId)
         {
             using (var ctx = new ApplicationDbContext())
