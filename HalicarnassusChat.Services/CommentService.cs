@@ -29,8 +29,7 @@ namespace HalicarnassusChat.Services
                 {
                     id = 0;
                 }
-                var entity =
-                new Comment()
+                var entity =                new Comment()
                 {
                     Author = _userId,
                     Content = model.Content,
@@ -54,7 +53,7 @@ namespace HalicarnassusChat.Services
                                 new CommentList
                                 {
                                     PostId = e.PostId,
-                                    Contents = e.Content,
+                                    Content = e.Content,
                                 }
                         );
 
@@ -99,7 +98,7 @@ namespace HalicarnassusChat.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Comments
-                        .Single(e => e.PostId == commentId && e.Author == _userId);
+                        .Single(e => e.CommentId == commentId && e.Author == _userId);
 
                 ctx.Comments.Remove(entity);
 

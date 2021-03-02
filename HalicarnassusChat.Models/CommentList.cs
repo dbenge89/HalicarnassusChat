@@ -9,6 +9,6 @@ namespace HalicarnassusChat.Models
     public class CommentList
     {
         public int PostId { get; set; }
-        public string Contents { get; set; }
+        public string Content { get; set; }
     }
 }
