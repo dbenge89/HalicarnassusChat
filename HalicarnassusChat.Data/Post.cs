@@ -10,17 +10,17 @@ namespace HalicarnassusChat.Data
     public class Post
     {
         [Key]
-        int Id { get; set; }
+        public int PostId { get; set; }
 
         [Required]
-        string Title { get; set; }
+        public string Title { get; set; }
 
         [Required]
-        string Text { get; set; }
+        public string Text { get; set; }
 
         public virtual List<Comment> Comments { get; set; }
 
         [Required]
-        Guid Aurthor { get; set; }
+        public Guid Aurthor { get; set; }
     }
 }

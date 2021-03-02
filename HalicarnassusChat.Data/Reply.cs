@@ -11,7 +11,7 @@ namespace HalicarnassusChat.Data
     public class Reply : Comment
     {
         [Required]
-        public int CommentId { get; set; }
+        public int Id { get; set; }
         [ForeignKey(nameof(CommentId))]
         public virtual Comment Comment { get; set; }
     }
