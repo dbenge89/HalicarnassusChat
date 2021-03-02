@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentEdit.cs" />
     <Compile Include="CommentList.cs" />
     <Compile Include="CreateComment.cs" />
     <Compile Include="CreatePost.cs" />
