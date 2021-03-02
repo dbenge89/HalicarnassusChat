@@ -29,8 +29,7 @@ namespace HalicarnassusChat.Services
                 {
                     id = 0;
                 }
-                var entity =
-                new Comment()
+                var entity =                new Comment()
                 {
                     Author = _userId,
                     Content = model.Content,
